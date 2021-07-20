@@ -1,0 +1,16 @@
+1 10, string 
+2 -1, number
+3 1, number
+4 2, number
+5 6, number
+6 9px, string
+7 $45, sring
+8 2, number
+9 nan, number
+10 infinity, number
+11 -9
+5, string
+12 -14, number
+13 1, number
+14 nan, number
+15 false, boolean
