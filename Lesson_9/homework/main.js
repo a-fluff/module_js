@@ -31,4 +31,6 @@ select.style.marginRight = '10px';
 labelOfSelect.textContent = 'Пол: ';
 labelOfSelect.append(select);
 select.innerHTML = '<option value="female">Ж</option><option value="male">М</option>';
+labelOfSelect.id = 'gender';
+select.id = 'gender';
 searchBtn.before(labelOfSelect);
