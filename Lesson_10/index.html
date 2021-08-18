@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      transition: 1s;
+    }
+    .child {
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+    }
+    .red {
+      background-color: rgb(255, 0, 0);
+    }
+    .yellow {
+      background-color: rgb(255, 238, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .black {
+      background-color: rgb(0, 0, 0);
+      width: 70%;
+      height: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .green {
+      background-color: rgb(30, 255, 0);
+      width: 70%;
+      height: 70%;
+    }
+    .blue {
+      background-color: rgb(0, 132, 255);
+    }
+    .borderRadius {
+      border-radius: 50%;
+    }
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .wrapper > div {
+      width: 150px;
+      height: 150px;
+      background-color: coral;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      color: #fff;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="eventAttribute()">eventAttribute</button>
+  <button class="eventDOM">eventDOM</button>
+  <button class="eventListner">addEventListner</button>
+  <button class="eventButton">eventButton</button>
+
+  <div>
+    <div class="child red"></div>
+    <div class="child yellow">
+      <div class="black">
+        <div class="green"></div>
+      </div>
+    </div>
+    <div class="child blue"></div>
+  </div>
+  <div>
+    <a class="adukar" href="https://adukar.by">Adukar</a>
+  </div>
+
+  <div class="wrapper"></div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
