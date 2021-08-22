@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .folder {
+      width: 100px;
+      height: 100px;
+      margin-top: 20px;
+    }
+    .folder--closed {
+      background: url(folder-closed.svg);
+      background-size: cover;
+    }
+    .folder--opened {
+      background: url(folder-opened.svg);
+      background-size: cover;
+    }
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .wrapper div {
+      width: 30px;
+      height: 30px;
+      margin: 5px;
+    }
+    .borderRadius {
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+  <body>
+    <p>Введите число: <input></p>
+    <div class="folder folder--closed"></div>
+    <div class="wrapper"></div>
+    <script src="main.js"></script>
+  </body>
+</html>

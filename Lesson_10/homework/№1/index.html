@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    form {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .disable {
+      background-color: red;
+      color: white;
+    }
+    .enable {
+      background-color: green;
+      color: white;
+    }
+    .disabled, .disable {
+      border-color: red;
+    }
+    .enabled, .enable {
+      border-color: green;
+    }
+  </style>
+</head>
+  <body>
+    <button>Нажми на меня!</button>
+    <button>click magic</button>
+
+    <form>
+      <input type="text">
+      <button type="button" class="disable">disable</button>
+      <button type="button" class="enable">enable</button>
+    </form>
+
+    <div class="movable"></div>
+    <div class="output"></div>
+    <script src="main.js"></script>
+  </body>
+</html>
