@@ -29,13 +29,12 @@ enableBtn.addEventListener('click', () => {
 
 //4
 let movable = document.querySelector('.movable');
-let i = 1;
 let prevX;
 let prevY;
 
 function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min
-}
+};
 
 movable.style.backgroundColor = '#' + (getRandomNumber(1, 9) * 10000000).toString(16).slice(0, 6);
 movable.style.width = getRandomNumber(50, 500).toFixed() + 'px';
@@ -45,17 +44,23 @@ movable.style.position = 'absolute';
 
 movable.addEventListener('mousemove', mouseMove);
 function mouseMove(e) {
-  if(i % 2 == 0) {
-    let shiftX = e.clientX - prevX;
-    let shiftY = e.clientY - prevY;
+  if(prevX && prevY) {
+    let shiftX = e.pageX - prevX;
+    let shiftY = e.pageY - prevY;
     movable.style.left = +getComputedStyle(movable).left.slice(0, -2) + shiftX + 'px';
     movable.style.top = +getComputedStyle(movable).top.slice(0, -2) + shiftY + 'px';
   };
-  prevX = e.clientX;
-  prevY = e.clientY;
-  i++;
+
+  prevX = e.pageX;
+  prevY = e.pageY;
 
   let p = document.createElement('p');
   document.querySelector('.output').prepend(p);
-  p.innerHTML = `X: ${e.clientX}, Y: ${e.clientY}`;
+  p.innerHTML = `X: ${getComputedStyle(movable).left}, Y: ${getComputedStyle(movable).top}`;
+};
+
+movable.addEventListener('mouseout', mouseOut);
+function mouseOut(e) {
+  prevX = 0;
+  prevY = 0;
 };
