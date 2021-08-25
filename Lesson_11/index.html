@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      transition: 1s;
+    }
+  </style>
+</head>
+<body>
+  <form name="feedback" action="#">
+    <p>Форма обратной связи</p>
+    <input value="Alex" type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email">
+    <input type="text" name="phone" placeholder="Phone">
+
+    <select name="from">
+      <option value="belarus">Беларусь</option>
+      <option value="russia">Россия</option>
+      <option value="poland" selected>Польша</option>
+      <option value="germany">Германия</option>
+    </select>
+  </form>
+  <form name="login" action="#">
+    <p>Форма авторизации</p>
+    <input type="text" name="name" placeholder="Name">
+    <input type="password" name="password" placeholder="Password">
+
+    <label>
+      Запомнить
+      <input name="remember" type="checkbox">
+    </label>
+  </form>
+
+    <form name="registration" action="#">
+      <p>Форма регистрации</p>
+      <input type="text" name="name" placeholder="Name">
+      <input type="password" name="password" placeholder="Password">
+      <input type="password" name="confirmPassword" placeholder="Confirm password">
+      <input type="submit" name="submit">
+    </form>
+
+  <script src="main.js"></script>
+  <script src="regExp.js"></script>
+</body>
+</html>
