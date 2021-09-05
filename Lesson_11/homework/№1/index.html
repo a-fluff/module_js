@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .calculator {
+      max-width: 340px;
+      border: 1px black solid;
+      padding: 30px;
+      margin-top: 20px;
+    }
+    .graphic-calc {
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+    }
+    #initial-sum:focus {
+      outline: none;
+      border: 2px black solid;
+    }
+    .error {
+      border: 2px solid red;
+    }
+    form {
+      height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    form input {
+      width: fit-content;
+    }
+    .initial-sum__wrapper, .result-sum__wrapper {
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      font-weight: bold;
+    }
+    .initial-sum__wrapper p:first-of-type, .result-sum__wrapper p:first-of-type {
+      position: absolute;
+      top: 0;
+    }
+    .initial-sum__wrapper p:last-of-type, .result-sum__wrapper p:last-of-type {
+      position: absolute;
+      top: 20px;
+    }
+    .initial-sum__wrapper {
+      margin-left: -20px;
+      margin-right: 10px;
+    }
+    .initial-sum-graph, .result-sum-graph {
+      margin-top: 55px;
+    }
+    .initial-sum-graph {
+      width: 50px;
+      height: 100px;
+      background-color: rgb(255, 0, 0);
+    }
+    .result-sum-graph {
+      width: 50px;
+      height: 100px;
+      background-color: rgb(0, 255, 0);
+    }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button  {
+      -webkit-appearance: none;
+      opacity: 1;
+      background: #FFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
+      width: 1em;
+      border-left: 1px solid #BBB;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <form name="1212" action="#">
+      <p>Калькулятор процентов, из расчёта 12% годовых.</p>
+      <label for="sum">Сумма</label>
+      <input id="initial-sum" type="text" value="100">
+      <label for="term">Срок в месяцах</label>
+      <input id="term" type="number" min="6" max="60" step="6" value="6">
+      <label for="capitalization">С капитализацией</label>
+      <input id="capitalization" type="checkbox">
+    </form>
+    <div class="graphic-calc">
+      <div class="initial-sum__wrapper">
+        <p>Было:</p>
+        <p class="initial-sum"></p>
+        <div class="initial-sum-graph"></div>
+      </div>
+      <div class="result-sum__wrapper">
+        <p>Станет:</p>
+        <p class="result-sum"></p>
+        <div class="result-sum-graph"></div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

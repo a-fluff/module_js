@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  form {
+    position: fixed;
+    width: 300px;
+    height: 280px;
+    margin: 0 auto;
+    background: #f1f1f1;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    margin-top: -140px;
+    margin-left: -150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  input {
+    width: 100%;
+    margin: 10px 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(185, 185, 185);
+    background: transparent;
+  }
+  input:focus {
+    outline: none;
+    border-bottom: 2px solid #585858;
+  }
+  input::placeholder {
+    transition: 0.5s;
+    color: rgb(170, 170, 170);
+  }
+  input:focus::placeholder { 
+    font-size: 10px;
+    transform: translateY(-15px);
+  }
+  p {
+    font-size: 18px;
+    text-align: center;
+  }
+  button {
+    width: max-content;
+    padding: 8px 10px;
+    border: 1px solid #585858;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    outline: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background:rgb(209, 208, 208);
+  }
+
+   .error {
+    font-size: 14px;
+    color: white;
+    background-color: rgb(196, 13, 13);
+    border-radius: 0 0 5px 5px;
+    padding: 6px 3px;
+  }
+  </style>
+</head>
+<body>
+  <form name="registration" novalidate>
+    <div class="wrapper">
+      <p>Форма регистрации</p>
+      <input type="text" name="login" placeholder="Login">
+      <input type="password" name="password" placeholder="Password" minlength="6" required>
+      <p></p>
+    </div>
+    <button type="submit" class="sign-up">Зарегистрироваться</button>
+  </form>
+  <script src="main.js"></script>
+</body>
+</html>
