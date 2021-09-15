@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
 }
+.input, .button {
+  padding: 5px 10px;
+  font-size: 18px;
+}
 .hidden {
   display: none;
   opacity: 0;
@@ -11,7 +15,7 @@
   padding-left: 30px;
 }
 .categories__list {
-  max-width: 200px;
+  max-width: 300px;
 }
 .categories__item {
   display: flex;
@@ -21,9 +25,23 @@
 }
 .categories__name {
   margin-right: 10px;
-  font-size: 16px;
-}
-.input, .button {
-  padding: 5px 10px;
   font-size: 18px;
+}
+.categories__rename {
+  margin-right: 10px;
+}
+.operation {
+  max-width: 300px;
+  margin-top: 30px;
+  padding-left: 30px;
+}
+.operation__form {
+  display: flex;
+  flex-direction: column;
+}
+.operation__form--hidden {
+  display: none;
+}
+.operation__form .input {
+  margin-bottom: 10px;
 }

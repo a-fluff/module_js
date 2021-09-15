@@ -3,12 +3,12 @@ let btnNewCategory = document.querySelector('.js-add-category');
 
 let listCategory = document.querySelector('.categories__list');
 
+//Флаг, означающий редактируемую категорию
+let statusEditCategory = false;
+
 btnNewCategory.addEventListener('click', addCategory);
 
 listCategory.addEventListener('click', funcCategory);
-
-//Флаг, означающий редактируемую категорию
-let statusEditCategory = false;
 
 function addCategory(e) {
   e.preventDefault();
@@ -28,8 +28,6 @@ function addCategory(e) {
 
   //Очистка поля ввода
   newCategory.value = '';
-  
-  console.log(categories);
 };
 
 function validateCategory(category) {
@@ -51,7 +49,9 @@ function renderCategory() {
 
   categories.forEach(function(category,) {
     listCategory.appendChild(templateItemCategory(category));
-  })
+  });
+
+  renderExpensesCategories();
 };
 
 //Создание списка категорий
@@ -65,32 +65,41 @@ function templateItemCategory(name) {
 
   wrapperItem.appendChild(textItem);
 
+  let controlItem = document.createElement('div');
+  controlItem.className = 'categories__control';
+
   let renameItem = document.createElement('button');
   renameItem.className = 'categories__rename button';
   renameItem.textContent = 'Rename';
 
-  wrapperItem.appendChild(renameItem);
+  controlItem.appendChild(renameItem);
+
+  let deleteItem = document.createElement('button');
+  deleteItem.className = 'categories__rename button';
+  deleteItem.textContent = 'Delete';
+
+  wrapperItem.appendChild(deleteItem);
+  wrapperItem.appendChild(controlItem);
 
   return wrapperItem;
 };
 
 function funcCategory(e) {
   let target = e.target;
+
   if((target.classList.contains('categories__rename')) && !statusEditCategory) {
-    renameCategory(target.parentElement);
+    renameCategory(target.parentElement.parentElement);
     statusEditCategory = true;
+  };
+
+  if((target.classList.contains('categories__delete')) && !statusEditCategory) {
+    deleteCategory(target.parentElement.parentElement);
   };
 };
 
-function renameCategory(parentElement) {
+function editCategory(parentElement) {
   let pCategory = parentElement.querySelector('.categories__name');
   let oldCategory = pCategory.textContent;
-
-  // pCategory.textContent = '';
-
-  // let newInput = document.createElement('input');
-  // newInput.value = oldCategory;
-  // pCategory.appendChild(newInput);
 
   let wrapperItem = document.createElement('div');
   wrapperItem.className = 'categories__item';
@@ -119,4 +128,17 @@ function renameCategory(parentElement) {
     });
     statusEditCategory = false;
   });
+};
+
+function deleteCategory(parentElement) {
+  let pCategory = parentElement.querySelector('.categories__name');
+  let oldCategory = pCategory.textContent;
+
+  const permission = confirm(`Удалить категорию ${category}?`);
+
+  if(permission) {
+    categories.splice(category.indexOf(category), 1);
+
+    renderCategory();
+  };
 };

@@ -15,12 +15,24 @@
         <input class="js-add-category button" type="submit" value="Add">
       </form>
     </div>
-    <div class="categories__list">
-
-    </div>
+    <div class="categories__list"></div>
+  </div>
+  <div>
+    <button class="button expenses">Expenses</button>
+    <button class="button income">Income</button>
+  </div>
+  <div class="operation">
+    <form class="operation__form operation__form--hidden">
+      <input class="operation__summ input" type="number" placeholder="Summ expenses">
+      <select class="operation__category input"></select>
+      <input class="operation__date input" type="date">
+      
+      <input class="js-add-operation button" type="submit" value="Add expenses">
+    </form>
   </div>
   <script src="js/variables.js"></script>
   <script src="js/categories.js"></script>
+  <script src="js/operation.js"></script>
   <script src="js/init.js"></script>
 </body>
 </html>
