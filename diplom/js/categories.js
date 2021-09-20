@@ -52,6 +52,8 @@ function renderCategory() {
   });
 
   renderExpensesCategories();
+  renderTotalCategories('modal__category');
+  renderTotalCategories('filter-category');
 };
 
 //Создание списка категорий

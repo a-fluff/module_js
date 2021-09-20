@@ -23,16 +23,76 @@
   </div>
   <div class="operation">
     <form class="operation__form operation__form--hidden">
-      <input class="operation__summ input" type="number" placeholder="Summ expenses">
+      <input class="operation__sum input" type="number" placeholder="sum expenses">
       <select class="operation__category input"></select>
       <input class="operation__date input" type="date">
       
       <input class="js-add-operation button" type="submit" value="Add expenses">
     </form>
   </div>
+
+  <table border="1" cellspacing="0" class="total">
+    <thead class="total__head">
+      <tr>
+        <td class="total__cell">
+          №
+        </td>
+        <td class="total__cell">
+          Category
+        </td>
+        <td class="total__cell">
+          Sum
+        </td>
+        <td class="total__cell">
+          Date
+        </td>
+        <td class="total__cell">
+          Operation
+        </td>
+        <td class="total__cell">
+          Control
+        </td>
+      </tr>
+      <tr>
+        <td class="total__cell"></td>
+        <td class="total__cell">
+          <select class="filter-category"></select>
+        </td>
+        <td class="total__cell">
+          <input class="filter-sum" type="text">
+        </td>
+        <td class="total__cell">
+          <input type="text" class="filter-date">
+        </td>
+        <td class="total__cell">
+          <select class="filter-operation">
+            <option value="all">All</option>
+            <option value="Expenses">Expenses</option>
+            <option value="income">Income</option>
+          </select>
+        </td>
+        <td class="total__cell"></td>
+      </tr>
+    </thead>
+    <tbody class="total__body">
+
+    </tbody>
+  </table>
+
+  <div class="modal modal--hidden">
+    <form class="modal__form modal__form--hidden">
+      <input class="modal__sum input" type="number" placeholder="sum expenses">
+      <select class="modal__category input"></select>
+      <input class="modal__date input" type="date">
+      
+      <input class="js-edit-modal button" type="submit" value="Edit">
+      <input class="js-cancel-modal button" type="submit" value="Delete">
+    </form>
+  </div>
   <script src="js/variables.js"></script>
   <script src="js/categories.js"></script>
   <script src="js/operation.js"></script>
+  <script src="js/total.js"></script>
   <script src="js/init.js"></script>
 </body>
 </html>

@@ -3,10 +3,10 @@ let newButtonIncome = document.querySelector('.income');
 
 let formOperation = document.querySelector('.operation__form');
 
-let btnNewExpenses = document.querySelector('.js-add-operation');
-let newExpensesSumm = document.querySelector('.operation__summ');
-let newExpensesCategory = document.querySelector('.operation__category');
-let newExpensesDate = document.querySelector('.operation__date');
+let btnNewOperation = document.querySelector('.js-add-operation');
+let newOperationSum = document.querySelector('.operation__sum');
+let newOperationCategory = document.querySelector('.operation__category');
+let newOperationDate = document.querySelector('.operation__date');
 
 let flagOperation = null;
 
@@ -17,7 +17,7 @@ btnNewOperation.addEventListener('click', addOperation);
 function renderFormOperation(operation) {
   flagOperation = operation;
 
-  newOperationSumm.placeholder = `Sum ${operation}`;
+  newOperationSum.placeholder = `Sum ${operation}`;
   btnNewOperation.value = `Add ${operation}`;
 
   toggleFormOperation();
@@ -31,7 +31,7 @@ function toggleFormOperation() {
 function addOperation(e) {
   e.preventDefault();
 
-  let valueSum = newExpensesSumm.value;
+  let valueSum = newExpensesSum.value;
   let valueCategory = newExpensesCategory.value;
   let valueDate = newExpensesDate.value;
 
@@ -45,8 +45,7 @@ function addOperation(e) {
   total.push(newOperation);
 
   clearForm();
-
-  console.log(total);
+  filterTotal();
 };
 
 function renderExpensesCategories() {
@@ -72,6 +71,6 @@ function renderExpensesDate(){
 function clearForm() {
   newOperationSum.value = '';
 
-  renderExpensesCategoryes();
+  renderExpensesCategories();
   renderExpensesDate();
 };
