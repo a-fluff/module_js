@@ -1,0 +1,48 @@
+.filter {
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    div {
+      width: 48%;
+      border: $black 1px solid;
+      border-radius: 7px;
+
+        &:not(:last-child) {
+          margin-bottom: 6px;
+
+          @media screen and (min-width: 500px) {
+            margin-bottom: 0;
+            margin-right: 6px;
+          }
+        }
+    }
+    * {
+      width: 100%;
+      outline: none;
+      border: none;
+      background: transparent;
+      padding: 1px 3px;
+    }
+    
+
+    @media screen and (min-width: 500px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__item {
+  }
+}
+.filter-date {
+}
+.filter-category {
+}
+.filter-operation {
+}
+.filter-sum {
+}
